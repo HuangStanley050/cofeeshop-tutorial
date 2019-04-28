@@ -1,6 +1,6 @@
 :root {
-  --mainBrown: #2d1ef1;
-  --mainYelow: #ff9e09;
+  --mainBrown: #2d1e1f;
+  --mainYelow: rgb(255,158,9);
   --mainGray: #ece8dc;
   --mainWhite: #fff;
   --mainDark: black;
@@ -17,9 +17,6 @@ body {
   padding: 0;
   background: var(--mainWhite);
   color: var(--mainDark);
-  font-family: Verdana;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -37,7 +34,28 @@ h6 {
 }
 
 .cart-icon {
-  cursoer: pointer;
+  cursor: pointer;
   color: var(--mainYelow);
   font-size: 2rem;
+}
+
+.default-background {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  opacity: 1 !important;
+  justify-content: center;
+  background: linear-gradient(rgba(255,158,9,0.5));
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-yellow {
+  color: var(--mainYelow);
+  border-color: var(--mainYellow);
+}
+
+.btn-yellow:hover {
+  color: var(--mainYellow);
+  border-color: var(--mainBrown);
 }

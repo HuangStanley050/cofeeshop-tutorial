@@ -19,12 +19,12 @@ class Navigation extends Component {
       {
         id: 1,
         path: "/",
-        text: "home",
+        text: "Home",
       },
       {
         id: 2,
         path: "/about",
-        text: "about",
+        text: "About",
       },
     ],
   };
