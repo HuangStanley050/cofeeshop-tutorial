@@ -10,10 +10,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from "reactstrap";
 
 class Navigation extends Component {
@@ -41,29 +37,29 @@ class Navigation extends Component {
     return (
       <div>
         <Navbar color="light" light expand="sm">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand>
+            <Link to="/">
+              <img src={Logo} alt="logo image for home" />
+              {/* https://www.iconfinder.com/icons/185113/coffee_streamline_icon
+              Creative Commons (Attribution 3.0 Unported);
+              https://www.iconfinder.com/webalys */}
+            </Link>
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="mx-auto" navbar>
+              {this.state.links.map(link => (
+                <NavItem key={link.id}>
+                  <NavLink tag={Link} to={link.path}>
+                    {link.text}
+                  </NavLink>
+                </NavItem>
+              ))}
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
+                <NavLink className="ml-sm-5">
+                  <FaCartArrowDown className="cart-icon" />
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
             </Nav>
           </Collapse>
         </Navbar>
