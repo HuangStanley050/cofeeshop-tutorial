@@ -37,13 +37,13 @@ class Navigation extends Component {
     return (
       <div>
         <Navbar color="light" light expand="sm">
-          <NavbarBrand>
-            <Link to="/">
+          <NavbarBrand tag="div">
+            <NavLink tag={Link} to="/">
               <img src={Logo} alt="logo image for home" />
               {/* https://www.iconfinder.com/icons/185113/coffee_streamline_icon
               Creative Commons (Attribution 3.0 Unported);
               https://www.iconfinder.com/webalys */}
-            </Link>
+            </NavLink>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
