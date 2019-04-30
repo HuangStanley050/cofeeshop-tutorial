@@ -4,12 +4,6 @@ import Img from "gatsby-image";
 import { Container, Row, Col } from "reactstrap";
 
 class Menu extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     items: this.props.items.edges,
-  //   };
-  // }
   state = {
     items: [],
     coffeeItems: [],
@@ -17,6 +11,7 @@ class Menu extends Component {
   componentDidMount() {
     this.setState({
       items: this.props.items.edges,
+      coffeeItems: this.props.items.edges,
     });
   }
 
@@ -25,9 +20,9 @@ class Menu extends Component {
       <section className="menu py-5">
         <Container>
           <Title title="best of our menu" />
-          <Row className="mb-5">
+          <Row>
             <Col xs="10" sm="6" className="mx-auto text-capitalize text-center">
-              <h1>There are no items to display</h1>
+              <h1>There are no items here</h1>
             </Col>
           </Row>
         </Container>
@@ -39,13 +34,30 @@ class Menu extends Component {
           <Container>
             <Title title="best of our menu" />
             <Row className="mb-5">
-              <Col
-                xs="10"
-                sm="6"
-                className="mx-auto text-capitalize text-center"
-              >
-                <h1>Hi there</h1>
-              </Col>
+              {this.state.coffeeItems.map(({ node }) => {
+                return (
+                  <Col
+                    key={node.id}
+                    xs="11"
+                    md="6"
+                    className="d-flex mx-auto my-3"
+                  >
+                    {" "}
+                    <div>
+                      <Img fixed={node.image.fixed} />
+                    </div>
+                    <div className="flex-grow-1 px-3">
+                      <div className="d-flex justify-content-between">
+                        <h6 className="mb-0">{node.titile}</h6>
+                        <h6 className="mb-0">${node.price}</h6>
+                      </div>
+                      <p className="text-muted">
+                        <small>{node.description.description}</small>
+                      </p>
+                    </div>
+                  </Col>
+                );
+              })}
             </Row>
           </Container>
         </section>
