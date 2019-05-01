@@ -2,6 +2,7 @@ import React from "react";
 import Product from "./product";
 import Title from "../global/title";
 import { StaticQuery, graphql } from "gatsby";
+import { Container, Row } from "reactstrap";
 
 const query = graphql`
   {
@@ -28,8 +29,19 @@ const Products = props => {
     <StaticQuery
       query={query}
       render={data => {
-        console.log(data.products);
-        return <h1>hello world</h1>;
+        //console.log(data.products);
+        return (
+          <section className="py-5">
+            <Container>
+              <Title title="our products" />
+              <Row>
+                {data.products.edges.map(({ node: product }) => {
+                  return <Product key={product.id} product={product} />;
+                })}
+              </Row>
+            </Container>
+          </section>
+        );
       }}
     />
   );
