@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import Background from "../components/global/background";
 import Info from "../components/home/info";
 import Menu from "../components/home/menu";
+import Products from "../components/home/products";
 import SEO from "../components/seo";
 
 const IndexPage = ({ data }) => (
@@ -17,6 +18,7 @@ const IndexPage = ({ data }) => (
     />
     <Info />
     <Menu items={data.menu} />
+    <Products />
   </Layout>
 );
 
