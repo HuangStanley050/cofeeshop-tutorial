@@ -3,8 +3,6 @@ import Img from "gatsby-image";
 import {
   Col,
   Card,
-  CardImg,
-  CardText,
   CardBody,
   CardTitle,
   CardSubtitle,
