@@ -57,7 +57,7 @@ class Navigation extends Component {
               ))}
               <NavItem>
                 <NavLink className="ml-sm-5">
-                  <FaCartArrowDown className="cart-icon" />
+                  <FaCartArrowDown className="cart-icon snipcart-checkout" />
                 </NavLink>
               </NavItem>
             </Nav>

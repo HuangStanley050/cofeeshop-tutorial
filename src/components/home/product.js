@@ -8,7 +8,8 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
-
+//=============== rememebr to change the data-item-url once deployed to netlify
+//=============== //
 const Product = ({ product }) => {
   return (
     <Col xs="10" sm="8" md="6" lg="4" className="mx-auto my-3">
@@ -17,7 +18,15 @@ const Product = ({ product }) => {
         <CardBody className="text-center">
           <CardTitle>{product.title}</CardTitle>
           <CardSubtitle>${product.price}</CardSubtitle>
-          <Button outline className="btn-yellow mt-3 text-capitalize">
+          <Button
+            outline
+            className="btn-yellow mt-3 text-capitalize snipcart-add-item"
+            data-item-id={product.id}
+            data-item-name={product.title}
+            data-item-price={product.price}
+            data-item-image={product.image.fluid.src}
+            data-item-url="http://localhost:8000"
+          >
             Add to Cart
           </Button>
         </CardBody>

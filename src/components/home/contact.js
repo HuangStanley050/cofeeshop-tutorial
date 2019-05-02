@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Title from "../global/title";
-import {
-  Row,
-  Col,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormText,
-} from "reactstrap";
+import { Row, Col, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const api_route = "http://localhost:8080/api/sendFeedback";
 
