@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import Title from "../global/title";
 import {
   Row,
@@ -10,6 +11,8 @@ import {
   Input,
   FormText,
 } from "reactstrap";
+
+const api_route = "http://localhost:8080/api/sendFeedback";
 
 class Contact extends Component {
   state = {
@@ -24,7 +27,21 @@ class Contact extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    alert("hi");
+    axios
+      .post(api_route, {
+        name: this.state.username,
+        email: this.state.email,
+        text: this.state.text,
+      })
+      .then(res => {
+        console.log(res);
+        this.setState({
+          username: "",
+          email: "",
+          text: "",
+        });
+      })
+      .catch(err => console.log(err));
   };
   render() {
     return (
