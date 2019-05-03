@@ -25,7 +25,7 @@ const Product = ({ product }) => {
             data-item-name={product.title}
             data-item-price={product.price}
             data-item-image={product.image.fluid.src}
-            data-item-url="http://localhost:8000"
+            data-item-url="https://184d6bea.ngrok.io/"
           >
             Add to Cart
           </Button>
